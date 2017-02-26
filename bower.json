@@ -1,0 +1,20 @@
+{
+  "name": "project",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-cookies": "^1.6.1",
+    "angular-environment": "^1.0.4",
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.6",
+    "angular-ui-mask": "^1.8.6",
+    "angular-ui-router": "^0.4.2",
+    "foundation": "^5.5.3",
+    "jquery": "~2.1.1",
+    "ngstorage": "^0.3.11"
+  },
+  "resolutions": {
+    "angular-cookies": "^1.6.1",
+    "angular": "^1.5.7"
+  }
+}
