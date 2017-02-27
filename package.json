@@ -1,7 +1,13 @@
 {
+  "name": "project",
   "private": true,
   "engines": {
     "node": ">=4"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "db": "mongod",
+    "serve" : "gulp serve"
   },
   "devDependencies": {
     "add-stream": "^1.0.0",

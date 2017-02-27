@@ -20,9 +20,11 @@ module.exports = function(app) {
       });
   });
 
-  app.delete('/contacts', function(req, res) {
+  app.delete('/contacts/:id', function(req, res) {
       // use mongoose to get all contacts in the database
-      Contact.remove({'_id':req.body._id}, function(err) {
+      console.log('Deleting Message');
+      console.log(req.params.id);
+      Contact.remove({'_id':req.params.id}, function(err) {
         if (err)
               res.send(err);
       });

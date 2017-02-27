@@ -21,8 +21,9 @@ class ContactsService {
 
   remove(data) {
     console.log('Send to Delete Service');
-    console.log(data);
-    return this.$http.delete('http://localhost:8080/contacts', data);
+    console.log(data._id);
+
+    return this.$http.delete('http://localhost:8080/contacts/'+ data._id);
   }
 
 };

@@ -22,7 +22,9 @@ class MainController {
 
       // Contacts
       contacts: [],
-      newItem: false
+      newItem: false,
+      activeHeader: null,
+      isExpanded: false
 
     });
 
@@ -38,6 +40,8 @@ class MainController {
   }
 
   sort(key){
+    this.activeHeader = key;
+
     var _key = key.toLowerCase();
     this.contacts.sort((a, b) => {
         var nameA=a[_key], nameB=b[_key];
@@ -76,6 +80,16 @@ class MainController {
     this.newItem = false;
     delete contact['create'];
     this.service.create(contact);
+  }
+
+  collapse(){
+    $("input:checkbox:not(:checked)").closest('tr').hide();
+    this.isExpanded = true;
+  }
+
+  expand(){
+    this.isExpanded = false;
+    $('tr').show();
   }
 
 };

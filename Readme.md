@@ -14,15 +14,15 @@ Install MongoDB with Homebrew
 
 ## Launch Project  
 
-Utilizing Gulp to build the project
-  gulp serve
-    - Spin up local server with Browserify to do local edits
-
-Run Express Server
-  node server.js
-
-Run MongoDB
+1. Run MongoDB
   mongod
+
+2. Run Express Server
+ node server.js
+
+3. Utilizing Gulp to build the project
+ gulp serve
+   - Spin up local server with Browserify to do local edits
 
 ## API Reference
 
@@ -35,5 +35,3 @@ Utilizing REST protocol
 
 ## Known Issues
  - Did not get to configure the Tests
- - Delete method for API, is not completed as seems to be an issue with my browser configuration. Need to troubleshoot for more details
- - Collapse button does not collapses as no information was given about how the table should collapse.

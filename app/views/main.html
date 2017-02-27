@@ -8,7 +8,8 @@
       </div>
       <div class='right btn'>
         <i class="fa fa-minus-square-o left" aria-hidden="true"></i>
-        <div class="right btn-text">Collapse</div>
+        <div class="right btn-text" ng-click='main.collapse()' ng-show='!main.isExpanded'>Collapse</div>
+        <div class="right btn-text" ng-click='main.expand()' ng-show='main.isExpanded'>Expand</div>
       </div>
     </div>
     <div class="columns large-1 ">&nbsp;</div>
@@ -25,18 +26,18 @@
       <table id="contacts" class="fullWidth">
         <thead>
           <tr>
-            <th ng-repeat="header in main.headers" ng-click="main.sort(header.title)">{{header.title}}</th>
+            <th ng-repeat="header in main.headers" ng-click="main.sort(header.title)" ng-class="{active : main.activeHeader === header.title}">{{header.title}}</th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="contact in main.contacts">
             <td>
               <input type="checkbox" ng-model='contact.selected' ng-show='!contact.create'>
-              <i class="fa fa-floppy-o" aria-hidden="true" ng-show='contact.create' ng-click='main.save(contact)'></i>
+              <i class="fa fa-floppy-o save" aria-hidden="true" ng-show='contact.create' ng-click='main.save(contact)'></i>
             </td>
             <td>
               <div ng-show="!contact.create">{{contact.type}}</div>
-              <input ng-show="contact.create" type="text" ng-model="contact.type">
+              <input ng-show="contact.create" type="text" ng-model="contact.type" autofocus>
             </td>
             <td>
               <div ng-show="!contact.create">{{contact.name}}</div>
